@@ -13,8 +13,8 @@
 % CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
 %
 % Important note:
-% This template requires the moderncv.cls and .sty files to be in the same 
-% directory as this .tex file. These files provide the resume style and themes 
+% This template requires the moderncv.cls and .sty files to be in the same
+% directory as this .tex file. These files provide the resume style and themes
 % used for structuring the document.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -49,8 +49,8 @@
 %\fax{(000) 111 1113}
 \email{markjcutler@gmail.com}
 \homepage{markjcutler.com}{markjcutler.com} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
-\extrainfo{additional information}
-\photo[70pt][0.4pt]{pictures/mark} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+%\extrainfo{https://www.linkedin.com/pub/mark-cutler/23/939/7a8}{LinkedIn}
+%\photo[70pt][0.4pt]{pictures/mark} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
 %\quote{"A witty and playful quotation" - John Smith}
 
 %----------------------------------------------------------------------------------------
@@ -73,7 +73,7 @@
 \section{Dissertation}
 
 \cvitem{Title}{\emph{Practical Robot Reinforcement Learning through Efficient Simulator Sampling}}
-\cvitem{Advisor}{Jonathan P. How}
+\cvitem{Committe}{Jonathan P. How (chair), Leslie Kaelbling, Andrea Censi}
 \cvitem{Description}{Designing efficient algorithms for decision making under uncertainty for autonomous systems.  Efficiency comes by properly incorporating possibly inaccurate simulations of system to be controlled.}
 
 
@@ -124,26 +124,29 @@ Detailed achievements:
 
 \section{Awards}
 
-\cvitem{2011}{School of Business Postgraduate Scholarship}
-\cvitem{2010}{Top Achiever Award -- Commerce}
+\cvitem{2010--2015}{National Science Foundation Graduate Fellow}
+\cvitem{2010--2011}{Aurora Flight Sciences Fellow}
+\cvitem{2004--2010}{Robert C. Byrd Honors Scholarship}
+
 
 %----------------------------------------------------------------------------------------
 %	COMPUTER SKILLS SECTION
 %----------------------------------------------------------------------------------------
 
-\section{Computer skills}
+\section{Technical Highlights}
 
-\cvitem{Languages}{\textsc{C/C++}, \textsc{python}, \textsc{Matlab}, \LaTex, \textsc{html}, \textsc{css}}
-\cvitem{Tools}{\textsc{ROS}, Git, \textsc{svn}, SolidWorks}
+\cvitem{Languages}{\textsc{C/C++}, \textsc{python}, \textsc{Matlab}, \LaTeX, \textsc{html}, \textsc{css}}
+\cvitem{Tools}{ROS, Git, \textsc{svn}, SolidWorks}
+\cvitem{Professional Activities}{Paper reviewer for the International Journal of
+  Robotics Research, IEEE Transactions on Automation Science and Engineering,
+  IEEE Transactions on Control Systems Technology, IEEE Control Systems
+  Magazine, ASME Journal of Dynamic Systems, Measurement and Control,
+  Automatica, Robotics: Science and Systems, IEEE International Conference on
+  Robotics and Automation, IEEE International Conference on Intelligent Robots
+  and Systems, IEEE Conference on Decision and Control, American Control
+  Conference, International Conference on Unmanned Aircraft Systems, European
+  Control Conference, and IFAC Symposium on Automatic Control in Aerospace.}
 
-%----------------------------------------------------------------------------------------
-%	COMMUNICATION SKILLS SECTION
-%----------------------------------------------------------------------------------------
-
-\section{Communication Skills}
-
-\cvitem{2010}{Oral Presentation at the California Business Conference}
-\cvitem{2009}{Poster at the Annual Business Conference in Oregon}
 
 %----------------------------------------------------------------------------------------
 %	INTERESTS SECTION
@@ -156,6 +159,11 @@ Detailed achievements:
 \cvlistdoubleitem{My Kids}{Robots}
 \cvlistdoubleitem{Electronics}{Racquet Sports}
 \cvlistdoubleitem{Skiing}{Ultimate Frisbee}
+
+\nocite{*}
+\bibliographystyle{unsrt}
+\bibliography{publications}                        % 'publications' is the name o
+
 
 %----------------------------------------------------------------------------------------
 %	COVER LETTER
