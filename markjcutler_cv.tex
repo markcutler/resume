@@ -28,11 +28,19 @@
 \moderncvstyle{casual} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
 \moderncvcolor{orange} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 
-\usepackage{lipsum} % TODO: delete Used for inserting dummy 'Lorem ipsum' text into the template
-
 \usepackage[scale=0.75]{geometry} % Reduce document margins
 %\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
 %\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+% bibliography with mutiple entries
+\usepackage{multibib}
+\newcites{journal,submitted,conference,other}{{Submitted},{Journal},{Peer-reviewed Conference Papers},{Other}}
+
+
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+
 
 %----------------------------------------------------------------------------------------
 %	NAME AND CONTACT INFORMATION SECTION
@@ -65,23 +73,34 @@
 
 \section{Education}
 
-\cventry{2012--2015}{PhD}{Massachusetts Institute of Technology}{Cambridge}{\textit{GPA -- 4.7/5.0}}{PhD in Robotics}  % Arguments not required can be left empty
-\cventry{2010--2012}{MS}{Massachusetts Institute of Technology}{Cambridge}{\textit{GPA -- 4.7/5.0}}{Masters in Aeronautical and Astronautical Engineering}
-\cventry{2004--2005,2007--2010}{BS}{Brigham Young University}{Provo, UT}{\textit{GPA -- 3.99/4.0}}{Bachelors in Mechanical Engineering}
+\cventry{2012--2015}{PhD}{Massachusetts Institute of
+  Technology}{Cambridge}{\textit{GPA -- 4.7/5.0}}{PhD in
+  Robotics} % Arguments not required can be left empty
+\cventry{2010--2012}{MS}{Massachusetts Institute of
+  Technology}{Cambridge}{\textit{GPA -- 4.7/5.0}}{Masters in Aeronautical and
+  Astronautical Engineering} \cventry{2004--2005,2007--2010}{BS}{Brigham Young
+  University}{Provo, UT}{\textit{GPA -- 3.99/4.0}}{Bachelors in Mechanical
+  Engineering}
 
 
 \section{Dissertation}
 
-\cvitem{Title}{\emph{Practical Robot Reinforcement Learning through Efficient Simulator Sampling}}
-\cvitem{Committe}{Jonathan P. How (chair), Leslie Kaelbling, Andrea Censi}
-\cvitem{Description}{Designing efficient algorithms for decision making under uncertainty for autonomous systems.  Efficiency comes by properly incorporating possibly inaccurate simulations of system to be controlled.}
+\cvitem{Title}{\emph{Practical Robot Reinforcement Learning through Efficient
+    Simulator Sampling}} \cvitem{Committe}{Jonathan P. How (chair), Leslie
+  Kaelbling, Andrea Censi} \cvitem{Description}{Designing efficient algorithms
+  for decision making under uncertainty for autonomous systems.  Efficiency
+  comes by properly incorporating possibly inaccurate simulations of system to
+  be controlled.}
 
 
 \section{Masters Thesis}
 
-\cvitem{Title}{\emph{Design and Control of an Autonomous Variable-Pitch Quadrotor Helicopter}}
-\cvitem{Advisor}{Jonathan P. How}
-\cvitem{Description}{Designed, built, and programmed a novel autonomous multi-rotor helicopter capable of agile, aggressive, and aerobatic flight.  Developed new flight control algorithms and autopilot hardware for the vehicle control.}
+\cvitem{Title}{\emph{Design and Control of an Autonomous Variable-Pitch
+    Quadrotor Helicopter}} \cvitem{Advisor}{Jonathan P. How}
+\cvitem{Description}{Designed, built, and programmed a novel autonomous
+  multi-rotor helicopter capable of agile, aggressive, and aerobatic flight.
+  Developed new flight control algorithms and autopilot hardware for the
+  vehicle control.}
 
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE SECTION
@@ -91,32 +110,55 @@
 
 \subsection{Vocational}
 
-\cventry{2010--2010}{Mechanical Design Engineer}{\textsc{SpotterRF}}{Orem, UT}{}{Developed new heat management techniques for small radar devices\newline{}\newline{}
-Detailed achievements:
+\cventry{2008--2010}{Undergraduate Research Assistant}{\textsc{Brigham Young
+    University}}{Provo, UT}{}{
 \begin{itemize}
-\item Learned how to make amazing coffee
-\item Finally determined the reason for \textsc{PC LOAD LETTER}:
-\begin{itemize}
-\item Paper jam
-\item Software issues:
-\begin{itemize}
-\item Word not sending the correct data to printer
-\item Windows trying to print in letter format
-\end{itemize}
-\item Coffee spilled inside printer
-\end{itemize}
-\item Broke the office record for number of kitten pictures in cubicle
+\item Wrote wind estimation algorithms for small unmanned air-vehicles (UAVs)
+\item Developed atmospheric energy harvesting techniques for small UAVs to
+  enhance their flight time, range, and mission capabilities
+\item Designed and built a three axis robot capable of mapping insect flapping
+  patterns
 \end{itemize}}
 
-%------------------------------------------------
+\cventry{2010--2010}{Mechanical Design Engineer}{\textsc{SpotterRF}}{Orem,
+  UT}{}{
+\begin{itemize}
+\item Developed new heat management techniques for small radar
+  devices resulting in a significant high-temperature performance improvement
+\item Designed a new carbon-fiber case for the radar encasement
+\end{itemize}}
 
-\cventry{2010--2011}{Summer Intern}{\textsc{Lehman Brothers}}{Los Angeles}{}{Rated "truly distinctive" for Analytical Skills and Teamwork.}
+\cventry{2009--2009}{Mechanical Design Engineer}{\textsc{L-3 Communications}}{Salt Lake City,
+  UT}{}{
+\begin{itemize}
+\item Designed demo plnnatform for new modem integration into mobile communication
+ground station
+\item Performed thermal, structural, weight, and power analyses to optimize
+  data link and modem case designs
+\end{itemize}}
+
+\cventry{2008--2008}{Advanced Machine Design Engineer}{\textsc{Corning Inc.}}{Corning,
+  NY}{}{
+\begin{itemize}
+\item Researched and tested method that reduced tool run-out by 55\% in
+  contouring mills
+\item Designed mechanism enabling the cutting of ceramic extrusions to be
+  performed by one person instead of two
+\end{itemize}}
+
 
 %------------------------------------------------
 
 \subsection{Volunteer}
 
-\cventry{2005--2007}{Volunteer Representative}{The Church of Jesus Christ of Latter-day Saints}{Rostov, Russia}{}{Learned Russian through daily interaction with locals as a missionary.  Provided leadership and training for 16 other missionaries, overseeing operations in a geographical area covering over 300 miles.}
+\cventry{2005--2007}{Volunteer Representative}{The Church of Jesus Christ of
+  Latter-day Saints}{Rostov, Russia}{}{
+\begin{itemize}
+\item Provided leadership, development and training for 16 volunteer representatives
+\item Oversaw volunteer operations in a geographical area covering over 300 miles
+\item Developed leadership, teaching, personal and communication skills
+\end{itemize}}
+
 
 %----------------------------------------------------------------------------------------
 %	AWARDS SECTION
@@ -135,18 +177,56 @@ Detailed achievements:
 
 \section{Technical Highlights}
 
-\cvitem{Languages}{\textsc{C/C++}, \textsc{python}, \textsc{Matlab}, \LaTeX, \textsc{html}, \textsc{css}}
-\cvitem{Tools}{ROS, Git, \textsc{svn}, SolidWorks}
-\cvitem{Professional Activities}{Paper reviewer for the International Journal of
-  Robotics Research, IEEE Transactions on Automation Science and Engineering,
-  IEEE Transactions on Control Systems Technology, IEEE Control Systems
-  Magazine, ASME Journal of Dynamic Systems, Measurement and Control,
+\cvitem{Languages}{\textsc{C/C++}, \textsc{python}, \textsc{Matlab}, \LaTeX,
+  basic \textsc{Java}, \textsc{html}, and \textsc{css}}
+\cvitem{Tools}{ROS, Git, \textsc{svn},
+  SolidWorks}
+\cvitem{Hardware}{Embedded microcontroller development (Microchip and
+  TI), Circuit design (2- and 4-layer boards), Soldering (including SMD
+  leadless components), Basic machining (mill, lathe, 3D printing)}
+\cvitem{Professional Activities}{Paper reviewer for the International Journal
+  of Robotics Research, IEEE Transactions on Automation Science and
+  Engineering, IEEE Transactions on Control Systems Technology, IEEE Control
+  Systems Magazine, ASME Journal of Dynamic Systems, Measurement and Control,
   Automatica, Robotics: Science and Systems, IEEE International Conference on
   Robotics and Automation, IEEE International Conference on Intelligent Robots
   and Systems, IEEE Conference on Decision and Control, American Control
   Conference, International Conference on Unmanned Aircraft Systems, European
   Control Conference, and IFAC Symposium on Automatic Control in Aerospace.}
 
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS SECTION
+%----------------------------------------------------------------------------------------
+
+% \nocite{*}
+% \bibliographystyle{unsrt}
+% \bibliography{publications}                        % 'publications' is the name o
+
+\section{Publications}
+
+\nocitejournal{*}
+\bibliographystylejournal{plainyr_gh}
+\bibliographyjournal{journal.bib}              % 'publications' is the name of a BibTeX file
+
+\setcounter{enumiv}{0}
+
+\nocitesubmitted{*}
+\bibliographystylesubmitted{plainyr_gh}
+\bibliographysubmitted{submitted.bib}              % 'publications' is the name of a BibTeX file
+
+\setcounter{enumiv}{0}
+\nociteconference{*}
+\bibliographystyleconference{plainyr_gh}
+\bibliographyconference{conference.bib}              % 'publications' is the name of a BibTeX file
+
+\setcounter{enumiv}{0}
+\nociteother{*}
+\bibliographystyleother{plainyr_gh}
+\bibliographyother{other.bib}              % 'publications' is the name of a BibTeX file
+
+\begin{minipage}[t]{.4\textwidth}
+\end{minipage}\\[2em]
 
 %----------------------------------------------------------------------------------------
 %	INTERESTS SECTION
@@ -160,9 +240,6 @@ Detailed achievements:
 \cvlistdoubleitem{Electronics}{Racquet Sports}
 \cvlistdoubleitem{Skiing}{Ultimate Frisbee}
 
-\nocite{*}
-\bibliographystyle{unsrt}
-\bibliography{publications}                        % 'publications' is the name o
 
 
 %----------------------------------------------------------------------------------------
@@ -187,4 +264,5 @@ Detailed achievements:
 
 %----------------------------------------------------------------------------------------
 
+Updated \today
 \end{document}
