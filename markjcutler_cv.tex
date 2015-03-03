@@ -25,21 +25,23 @@
 
 \documentclass[11pt,letterpaper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
 
-\moderncvstyle{casual} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{orange} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\moderncvstyle{banking} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{green} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 
 \usepackage[scale=0.75]{geometry} % Reduce document margins
 %\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
 %\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
 
+%\usepackage{enumitem}
+
 % bibliography with mutiple entries
 \usepackage{multibib}
-\newcites{submitted,journal,conference,other}{{Submitted Papers},{Journal Papers},{Peer-reviewed Conference Papers},{Other Papers}}
+\newcites{journal,conference,other}{{Journal Papers},{Peer-reviewed Conference Papers},{Other Papers}}
 
-
-\makeatletter
-\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
-\makeatother
+% Number the publications
+% \makeatletter
+% \renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+% \makeatother
 
 
 %----------------------------------------------------------------------------------------
@@ -50,13 +52,13 @@
 \familyname{Cutler} % Your last name
 
 % All information in this block is optional, comment out any lines you don't need
-\title{Curriculum Vitae}
+\title{\href{markjcutler.com}{markjcutler.com}}
 \address{284 Vassar St. Apt G5}{Cambridge, MA 02139}
 %\mobile{(000) 111 1111}
 %\phone{(000) 111 1112}
 %\fax{(000) 111 1113}
 \email{markjcutler@gmail.com}
-\homepage{markjcutler.com}{markjcutler.com} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+%\homepage{markjcutler.com}{markjcutler.com} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
 %\extrainfo{https://www.linkedin.com/pub/mark-cutler/23/939/7a8}{LinkedIn}
 %\photo[70pt][0.4pt]{pictures/mark} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
 %\quote{"A witty and playful quotation" - John Smith}
@@ -74,23 +76,23 @@
 \section{Education}
 
 \cventry{2012--2015}{PhD}{Massachusetts Institute of
-  Technology}{Cambridge}{\textit{GPA -- 4.7/5.0}}{PhD in
-  Robotics} % Arguments not required can be left empty
+  Technology}{Cambridge MA}{\textit{GPA -- 4.7/5.0}}{Robotics and Autonomous
+  Systems} % Arguments not required can be left empty
 \cventry{2010--2012}{MS}{Massachusetts Institute of
-  Technology}{Cambridge}{\textit{GPA -- 4.7/5.0}}{Masters in Aeronautical and
-  Astronautical Engineering} \cventry{2004--2005,2007--2010}{BS}{Brigham Young
-  University}{Provo, UT}{\textit{GPA -- 3.99/4.0}}{Bachelors in Mechanical
-  Engineering}
+  Technology}{Cambridge MA}{\textit{GPA -- 4.7/5.0}}{Aeronautical and
+  Astronautical Engineering}
+\cventry{2004--2005,
+  2007--2010}{BS}{Brigham Young University}{Provo UT}{\textit{GPA -- 3.99/4.0}}{Mechanical Engineering}
 
 
 \section{Dissertation}
 
 \cvitem{Title}{\emph{Practical Robot Reinforcement Learning through Efficient
-    Simulator Sampling}} \cvitem{Committe}{Jonathan P. How (chair), Leslie
+    Simulator Sampling}} \cvitem{Committee}{Jonathan P. How (chair), Leslie
   Kaelbling, Andrea Censi} \cvitem{Description}{Designing efficient algorithms
   for decision making under uncertainty for autonomous systems.  Efficiency
-  comes by properly incorporating possibly inaccurate simulations of system to
-  be controlled.}
+  comes by properly incorporating possibly inaccurate simulations of the system
+  to be controlled.}
 
 
 \section{Masters Thesis}
@@ -108,15 +110,21 @@
 
 \section{Experience}
 
-\subsection{Vocational}
+\subsection{Research}
 
-\cventry{2010--2015}{Research Assistant}{\textsc{Massachusetts Institute of Technology}}{Cambridge, MA}{}{
+\cventry{2010--2015}{Research Assistant}{Aerospace Controls Lab, MIT}{Cambridge MA}{}{
 \begin{itemize}
-\item Re-designed and re-wrote all of the lab infrastructure code used for vehicle communication, control, 
+\item Designed and wrote all of the lab infrastructure code used for autonomous
+  vehicle communication, control, estimation, planning, and visualization
+\item Designed, built, and soldered custom autopilots that currently operate
+  all the lab vehicles
+\item Implemented lightweight, vision-based estimation code for relative
+  navigation of quadrotors
+\item Implemented a robust multi-vehicle path planning algorithm used for
+  multi-vehicle missions
 \end{itemize}}
 
-\cventry{2008--2010}{Undergraduate Research Assistant}{\textsc{Brigham Young
-    University}}{Provo, UT}{}{
+\cventry{2008--2010}{Undergraduate Research Assistant}{MAGICC Lab, BYU}{Provo UT}{}{
 \begin{itemize}
 \item Wrote wind estimation algorithms for small unmanned air-vehicles (UAVs)
 \item Developed atmospheric energy harvesting techniques for small UAVs to
@@ -125,7 +133,11 @@
   patterns
 \end{itemize}}
 
-\cventry{2010--2010}{Mechanical Design Engineer}{\textsc{SpotterRF}}{Orem,
+%------------------------------------------------
+
+\subsection{Industry}
+
+\cventry{2010--2010}{Mechanical Design Engineer}{SpotterRF}{Orem
   UT}{}{
 \begin{itemize}
 \item Developed new heat management techniques for small radar
@@ -133,16 +145,16 @@
 \item Designed a new carbon-fiber case for the radar encasement
 \end{itemize}}
 
-\cventry{2009--2009}{Mechanical Design Engineer}{\textsc{L-3 Communications}}{Salt Lake City,
+\cventry{2009--2009}{Mechanical Design Engineer}{L-3 Communications}{Salt Lake City
   UT}{}{
 \begin{itemize}
-\item Designed demo plnnatform for new modem integration into mobile communication
+\item Designed demo platform for new modem integration into mobile communication
 ground station
 \item Performed thermal, structural, weight, and power analyses to optimize
   data link and modem case designs
 \end{itemize}}
 
-\cventry{2008--2008}{Advanced Machine Design Engineer}{\textsc{Corning Inc.}}{Corning,
+\cventry{2008--2008}{Advanced Machine Design Engineer}{Corning Inc.}{Corning
   NY}{}{
 \begin{itemize}
 \item Researched and tested method that reduced tool run-out by 55\% in
@@ -155,6 +167,13 @@ ground station
 %------------------------------------------------
 
 \subsection{Volunteer}
+
+\cventry{2010--2014}{Aerospace Controls Lab}{Research
+  Mentor}{Cambridge MA}{}{
+\begin{itemize}
+\item Mentored several undergraduate researchers and senior projects
+\end{itemize}
+}
 
 \cventry{2005--2007}{Volunteer Representative}{The Church of Jesus Christ of
   Latter-day Saints}{Rostov, Russia}{}{
@@ -182,22 +201,36 @@ ground station
 
 \section{Technical Highlights}
 
-\cvitem{Languages}{\textsc{C/C++}, \textsc{python}, \textsc{Matlab}, \LaTeX,
-  basic \textsc{Java}, \textsc{html}, and \textsc{css}}
-\cvitem{Tools}{ROS, Git, \textsc{svn},
-  SolidWorks}
+\cvitem{Languages}{\textsc{C/C++}, \textsc{Python}, \textsc{Matlab}, \LaTeX,
+  some \textsc{HTML} and \textsc{CSS}}
+\cvitem{Tools}{\textsc{ROS}, \textsc{Git}, \textsc{SVN},
+  \textsc{SolidWorks}}
 \cvitem{Hardware}{Embedded microcontroller development (Microchip and
   TI), Circuit design (2- and 4-layer boards), Soldering (including SMD
   leadless components), Basic machining (mill, lathe, 3D printing)}
-\cvitem{Professional Activities}{Paper reviewer for the International Journal
-  of Robotics Research, IEEE Transactions on Automation Science and
-  Engineering, IEEE Transactions on Control Systems Technology, IEEE Control
-  Systems Magazine, ASME Journal of Dynamic Systems, Measurement and Control,
-  Automatica, Robotics: Science and Systems, IEEE International Conference on
-  Robotics and Automation, IEEE International Conference on Intelligent Robots
-  and Systems, IEEE Conference on Decision and Control, American Control
-  Conference, International Conference on Unmanned Aircraft Systems, European
-  Control Conference, and IFAC Symposium on Automatic Control in Aerospace.}
+
+\cvitem{Professional Activities}{Paper reviewer for
+ \begin{itemize}
+\renewcommand\labelitemi{--}
+\setlength{\itemindent}{1in}
+\item{International Journal
+  of Robotics Research}
+\item{IEEE Transactions on Automation Science and Engineering}
+\item{IEEE Transactions on Control Systems Technology}
+\item{ASME Journal of Dynamic Systems, Measurement and Control}
+\item{IEEE Control Systems Magazine}
+\item{Automatica}
+\item{Robotics: Science and Systems}
+\item{IEEE International Conference on
+  Robotics and Automation}
+\item{IEEE International Conference on Intelligent Robots
+  and Systems}
+\item{IEEE Conference on Decision and Control}
+\item{American Control Conference}
+\item{International Conference on Unmanned Aircraft Systems}
+\item{European Control Conference}
+\item{IFAC Symposium on Automatic Control in Aerospace}
+\end{itemize}}
 
 
 %----------------------------------------------------------------------------------------
@@ -215,12 +248,6 @@ ground station
 \bibliographyjournal{journal.bib}              % 'publications' is the name of a BibTeX file
 
 \setcounter{enumiv}{0}
-
-\nocitesubmitted{*}
-\bibliographystylesubmitted{plainyr_gh}
-\bibliographysubmitted{submitted.bib}              % 'publications' is the name of a BibTeX file
-
-\setcounter{enumiv}{0}
 \nociteconference{*}
 \bibliographystyleconference{plainyr_gh}
 \bibliographyconference{conference.bib}              % 'publications' is the name of a BibTeX file
@@ -230,8 +257,8 @@ ground station
 \bibliographystyleother{plainyr_gh}
 \bibliographyother{other.bib}              % 'publications' is the name of a BibTeX file
 
-\begin{minipage}[t]{.4\textwidth}
-\end{minipage}\\[2em]
+% \begin{minipage}[t]{.4\textwidth}
+% \end{minipage}\\[2em]
 
 %----------------------------------------------------------------------------------------
 %	INTERESTS SECTION
@@ -269,8 +296,13 @@ ground station
 
 %----------------------------------------------------------------------------------------
 
-\vspace{2cm}
-\begin{center}
-Updated \today
-\end{center}
+% \vfill
+% \begin{center}
+% Updated \today
+% \end{center}
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
